@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Urban Company - Services at home</title>
+  <meta name="description" content="Urban Company - Book Salon, Cleaning, AC Repair, Electrician, Plumber, Painter and Native Smart Products at home.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- App Main Viewport Container -->
+  <div class="device-container">
+    <div class="app-viewport" id="appViewport">
+
+      <!-- Purple Gradient Header Section -->
+      <section class="gradient-header">
+        
+        <!-- Top Status/Location Bar -->
+        <div class="location-bar" id="locationBarBtn" role="button" tabindex="0">
+          <div class="location-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="white">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+            </svg>
+          </div>
+          <div class="location-text">
+            <div class="location-title">
+              <span id="currentCity">Kalinganagar</span>
+            </div>
+            <div class="location-subtitle">
+              <span id="currentAddress">Madhavadhara- Visakhapatnam- Andhra ...</span>
+              <svg class="chevron-down" viewBox="0 0 24 24" width="16" height="16" fill="white">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sticky Search Bar Container -->
+        <div class="search-bar-wrapper">
+          <div class="search-bar" id="searchTrigger">
+            <svg class="search-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#64748B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <div class="search-placeholder-container">
+              <span id="dynamicPlaceholder" class="search-placeholder">Search for ‘Kitchen cleaning’</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Main Scrollable Feed Content -->
+      <main class="main-feed" id="mainFeed">
+
+        <!-- 6 Category Grid (2 rows x 3 cols) -->
+        <section class="category-grid-section">
+          <div class="category-grid">
+            
+            <div class="category-card" onclick="openGigWorkersForCategory('salon_women', 'Women\'s Salon')">
+              <div class="category-img-box">
+                <img src="images/cat_womens_salon.jpg" alt="Women's Salon" loading="eager">
+              </div>
+              <span class="category-label">Women's Salon</span>
+            </div>
+
+            <div class="category-card" onclick="openGigWorkersForCategory('salon_men', 'Salon Prime for kids & men')">
+              <div class="category-img-box">
+                <img src="images/cat_mens_salon.jpg" alt="Salon Prime for kids & men" loading="eager">
+              </div>
+              <span class="category-label">Salon Prime for kids & men</span>
+            </div>
+
+            <div class="category-card" onclick="openGigWorkersForCategory('cleaning', 'Cleaning')">
+              <div class="category-img-box">
+                <img src="images/cat_cleaning.jpg" alt="Cleaning" loading="eager">
+              </div>
+              <span class="category-label">Cleaning</span>
+            </div>
+
+            <div class="category-card" onclick="openGigWorkersForCategory('painting', 'Painting & Water - proofing')">
+              <div class="category-img-box">
+                <img src="images/cat_painting.jpg" alt="Painting & Water - proofing" loading="eager">
+              </div>
+              <span class="category-label">Painting & Water - proofing</span>
+            </div>
+
+            <div class="category-card" onclick="openGigWorkersForCategory('ac_repair', 'AC & Appliance Repair')">
+              <div class="category-img-box">
+                <img src="images/cat_ac_appliance.jpg" alt="AC & Appliance Repair" loading="eager">
+              </div>
+              <span class="category-label">AC & Appliance Repair</span>
+            </div>
+
+            <div class="category-card" onclick="openGigWorkersForCategory('repair', 'Electrician, Plumber & Carpenter')">
+              <div class="category-img-box">
+                <img src="images/cat_repair_tools.jpg" alt="Electrician, Plumber & Carpenter" loading="eager">
+              </div>
+              <span class="category-label">Electrician, Plumber & Carpenter</span>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Native Smart Products Section -->
+        <section class="native-products-section">
+          <h2 class="section-heading">Native Smart Products</h2>
+          <div class="native-grid">
+            <div class="native-card" onclick="openGigWorkersForService('native_purifier', 'Native Water Purifier (M3 Pro)', '₹13,999')">
+              <div class="native-img-box">
+                <img src="images/native_purifier.jpg" alt="Native Water Purifier">
+              </div>
+              <span class="native-label">Native Water Purifier</span>
+            </div>
+
+            <div class="native-card" onclick="openGigWorkersForService('native_locks', 'Native Smart Locks', '₹9,499')">
+              <div class="native-img-box">
+                <img src="images/native_smart_lock.jpg" alt="Native Smart Locks">
+              </div>
+              <span class="native-label">Native Smart Locks</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- In the Spotlight Carousel Section -->
+        <section class="spotlight-section">
+          <h2 class="section-heading">In the spotlight</h2>
+          <div class="spotlight-carousel-wrap">
+            <div class="spotlight-track" id="spotlightTrack">
+              
+              <!-- Spotlight Card 1: M3 Pro & M3 -->
+              <div class="spotlight-banner banner-dark" onclick="openGigWorkersForService('native_purifier', 'Native M3 Pro & M3 RO', '₹13,999')">
+                <div class="spotlight-content">
+                  <span class="badge-pink">New launch</span>
+                  <h3 class="banner-title">M3 Pro & M3</h3>
+                  <p class="banner-subtitle">First ever ROs with 3-year filter life</p>
+                  <button class="banner-btn" type="button">Book Worker</button>
+                </div>
+                <div class="spotlight-img-wrap">
+                  <img src="images/native_purifier.jpg" alt="Native M3 Pro Purifier">
+                </div>
+              </div>
+
+              <!-- Spotlight Card 2: AC Campaign -->
+              <div class="spotlight-banner banner-beige" onclick="openGigWorkersForService('ac_repair', 'Foam-jet AC Service', '₹799')">
+                <div class="spotlight-content">
+                  <span class="badge-dark">New season</span>
+                  <h3 class="banner-title">AC service with foam-jet</h3>
+                  <p class="banner-subtitle">Full 2x deeper cooling & odor removal</p>
+                  <button class="banner-btn btn-dark" type="button">Book Worker</button>
+                </div>
+                <div class="spotlight-img-wrap">
+                  <img src="images/service_foam_ac.jpg" alt="AC Service">
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Carousel Indicator Dots -->
+            <div class="carousel-indicators" id="spotlightDots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- New and noteworthy Section -->
+        <section class="horizontal-scroll-section">
+          <h2 class="section-heading">New and noteworthy</h2>
+          <div class="card-scroll-track">
+            
+            <div class="square-service-card" onclick="openGigWorkersForService('cleaning', 'Full Home/ Book by Room', '₹1,999')">
+              <div class="square-card-img">
+                <img src="images/service_full_home.jpg" alt="Full Home Cleaning">
+              </div>
+              <p class="square-card-title">Full Home/ Book by Room ...</p>
+            </div>
+
+            <div class="square-service-card" onclick="openGigWorkersForService('painting', 'Home Painting Consultation', '₹3,499')">
+              <div class="square-card-img">
+                <img src="images/service_painting.jpg" alt="Home Painting">
+              </div>
+              <p class="square-card-title">Home Painting</p>
+            </div>
+
+            <div class="square-service-card" onclick="openGigWorkersForService('native_purifier', 'Native Water Purifier (M3 Pro)', '₹13,999')">
+              <div class="square-card-img">
+                <img src="images/native_purifier.jpg" alt="Native Water Purifier">
+              </div>
+              <p class="square-card-title">Native Water Purifier</p>
+            </div>
+
+            <div class="square-service-card" onclick="openGigWorkersForService('cleaning', 'Bathroom & Kitchen Cleaning Combo', '₹1,249')">
+              <div class="square-card-img">
+                <img src="images/service_bathroom_kitchen.jpg" alt="Bathroom & Kitchen Cleaning">
+              </div>
+              <p class="square-card-title">Bathroom & Kitchen Cle...</p>
+            </div>
+
+          </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Most booked services Section -->
+        <section class="horizontal-scroll-section">
+          <div class="section-header-row">
+            <h2 class="section-heading">Most booked services</h2>
+          </div>
+          <div class="card-scroll-track product-cards-track">
+            
+            <!-- Service 1: Bathroom Intense cleaning -->
+            <div class="product-service-card" onclick="openGigWorkersForService('cleaning', 'Intense cleaning (2 bathroom)', '₹998')">
+              <div class="product-img-box">
+                <img src="images/service_toilet_scrub.jpg" alt="Intense bathroom cleaning">
+              </div>
+              <div class="product-meta">
+                <h4 class="product-title">Intense cleaning (2 bathroom)</h4>
+                <div class="product-rating">
+                  <span class="star-icon">★</span> 4.80 (7M)
+                </div>
+                <div class="product-price-row">
+                  <span class="current-price">₹998</span>
+                  <span class="old-price">₹1,058</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 2: Foam-jet AC service -->
+            <div class="product-service-card" onclick="openGigWorkersForService('ac_repair', 'Foam-jet AC service', '₹799')">
+              <div class="product-img-box">
+                <img src="images/service_foam_ac.jpg" alt="Foam-jet AC service">
+              </div>
+              <div class="product-meta">
+                <h4 class="product-title">Foam-jet AC service</h4>
+                <div class="product-rating">
+                  <span class="star-icon">★</span> 4.75 (2.9M)
+                </div>
+                <div class="product-price-row">
+                  <span class="current-price">₹799</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 3: AC repair -->
+            <div class="product-service-card" onclick="openGigWorkersForService('ac_repair', 'AC repair', '₹299')">
+              <div class="product-img-box">
+                <img src="images/service_ac_repair.jpg" alt="AC repair">
+              </div>
+              <div class="product-meta">
+                <h4 class="product-title">AC repair</h4>
+                <div class="product-rating">
+                  <span class="star-icon">★</span> 4.73 (859K)
+                </div>
+                <div class="product-price-row">
+                  <span class="current-price">₹299</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Customer Testimonials Section -->
+        <section class="reviews-section">
+          <div class="reviews-track" id="reviewsTrack">
+            
+            <!-- Review 1: Pink card -->
+            <div class="review-card review-pink" onclick="openGigWorkersForCategory('salon_women', 'Salon for Women')">
+              <div class="review-card-top">
+                <span class="review-tagline-pink">Very time convenient!</span>
+                <div class="review-rating-badge">
+                  <span class="stars">★★★★★</span>
+                  <span class="score">5.0</span>
+                </div>
+              </div>
+              <div class="quote-symbol">“</div>
+              <p class="review-body">
+                Very happy with the salon service. Professional came on time & completed her work with perfection. Overall a great relaxing experience.
+              </p>
+              <div class="quote-author">
+                <div class="user-avatar-circle">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="#DB2777">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                  </svg>
+                </div>
+                <span>Priyanka</span>
+              </div>
+            </div>
+
+            <!-- Review 2: Purple card -->
+            <div class="review-card review-purple" onclick="openGigWorkersForCategory('cleaning', 'Cleaning Services')">
+              <div class="review-card-top">
+                <span class="review-tagline-purple">Spotless. Advanced!</span>
+                <div class="review-rating-badge">
+                  <span class="stars">★★★★★</span>
+                  <span class="score">5.0</span>
+                </div>
+              </div>
+              <div class="quote-symbol">“</div>
+              <p class="review-body">
+                Amazing! Professional scrubbed the hard water stains with high power tools. Now my bathroom looks sparkling brand new.
+              </p>
+              <div class="quote-author">
+                <div class="user-avatar-circle">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="#7C3AED">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                  </svg>
+                </div>
+                <span>Ananya Roy</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="carousel-indicators">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+          </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Salon for Women Section -->
+        <section class="horizontal-scroll-section salon-section">
+          <div class="section-header-row">
+            <div>
+              <h2 class="section-heading">Salon for Women</h2>
+              <p class="section-subtext">Pamper yourself at home</p>
+            </div>
+            <a href="javascript:void(0)" class="see-all-link" onclick="openGigWorkersForCategory('salon_women', 'Salon for Women')">See all</a>
+          </div>
+
+          <div class="card-scroll-track product-cards-track">
+            
+            <!-- Salon 1 -->
+            <div class="product-service-card" onclick="openGigWorkersForService('salon_women', 'Crystal rose pedicure', '₹759')">
+              <div class="product-img-box">
+                <img src="images/service_pedicure.jpg" alt="Crystal rose pedicure">
+              </div>
+              <div class="product-meta">
+                <h4 class="product-title">Crystal rose pedicure</h4>
+                <div class="product-rating">
+                  <span class="star-icon">★</span> 4.83 (333K)
+                </div>
+                <div class="product-price-row">
+                  <span class="current-price">₹759</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Salon 2 -->
+            <div class="product-service-card" onclick="openGigWorkersForService('salon_women', 'Roll-on waxing (Full arms, legs & ...', '₹749')">
+              <div class="product-img-box">
+                <img src="images/service_waxing.jpg" alt="Roll-on waxing">
+              </div>
+              <div class="product-meta">
+                <h4 class="product-title">Roll-on waxing (Full arms, legs & ...</h4>
+                <div class="product-rating">
+                  <span class="star-icon">★</span> 4.86 (252K)
+                </div>
+                <div class="product-price-row">
+                  <span class="current-price">₹749</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Salon 3 -->
+            <div class="product-service-card" onclick="openGigWorkersForService('salon_women', 'Power glow facial', '₹699')">
+              <div class="product-img-box">
+                <img src="images/service_power_glow.jpg" alt="Power glow facial">
+              </div>
+              <div class="product-meta">
+                <h4 class="product-title">Power glow facial</h4>
+                <div class="product-rating">
+                  <span class="star-icon">★</span> 4.86 (149K)
+                </div>
+                <div class="product-price-row">
+                  <span class="current-price">₹699</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Large Bottom Native Banner -->
+        <section class="bottom-promo-banner" onclick="openGigWorkersForService('native_purifier', 'Native M3 Pro & M3', '₹13,999')">
+          <div class="promo-card">
+            <span class="badge-pink">New launch</span>
+            <h3 class="promo-title">Native M3 Pro & M3</h3>
+            <h2 class="promo-highlight">3-year filter life.</h2>
+            <p class="promo-sub">Smart RO with 100% genuine parts warranty & certified technician doorstep setup</p>
+            <div class="promo-footer">
+              <button class="btn-explore" type="button">Book Specialist</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Spacing for Fixed Nav -->
+        <div class="bottom-nav-spacer"></div>
+
+      </main>
+
+      <!-- Bottom Navigation Bar (Persistent 4 Tabs) -->
+      <nav class="bottom-nav-bar" id="bottomNav">
+        
+        <button class="nav-item active" data-tab="home" onclick="selectNavTab(this, 'home')">
+          <div class="nav-icon-uc">
+            <span>UC</span>
+          </div>
+          <span class="nav-label">UC</span>
+        </button>
+
+        <button class="nav-item" data-tab="help" onclick="selectNavTab(this, 'help')">
+          <div class="nav-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </div>
+          <span class="nav-label">Help</span>
+        </button>
+
+        <button class="nav-item" data-tab="native" onclick="selectNavTab(this, 'native')">
+          <div class="nav-icon relative">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span class="notification-dot"></span>
+          </div>
+          <span class="nav-label">Native</span>
+        </button>
+
+        <button class="nav-item" data-tab="account" onclick="selectNavTab(this, 'account')">
+          <div class="nav-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <span class="nav-label">Account</span>
+        </button>
+
+      </nav>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       INTERACTIVE GIG WORKERS MODAL / DIRECT CALL / BOOKING
+  ============================================================ -->
+
+  <!-- 1. Gig Workers List Modal (Opens on any service press) -->
+  <div class="modal-overlay" id="gigWorkersModal">
+    <div class="bottom-sheet workers-sheet">
+      <div class="sheet-handle"></div>
+      
+      <div class="sheet-header">
+        <div>
+          <span class="sheet-badge-live">⚡ Available Pros Near You</span>
+          <h3 id="workersModalServiceName" class="workers-service-title">Intense Cleaning (2 Bathroom)</h3>
+        </div>
+        <button class="close-btn" onclick="closeWorkersModal()">✕</button>
+      </div>
+
+      <!-- Verified Pros Count & Filter -->
+      <div class="workers-filter-bar">
+        <span class="pro-count-label" id="proCountText">3 Verified Workers Ready</span>
+        <div class="pro-filter-tag">🛡️ Background Verified</div>
+      </div>
+
+      <!-- Workers Cards Container -->
+      <div class="workers-list-container" id="workersListContainer">
+        <!-- Injected by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Direct Call Modal (Simulates in-app live phone call) -->
+  <div class="modal-overlay" id="callModal">
+    <div class="call-dialog">
+      <div class="call-top-indicator">
+        <span class="secure-icon">🛡️</span> Urban Company Secure Shield Call
+      </div>
+      
+      <div class="call-avatar-wrap">
+        <div class="call-avatar-ring"></div>
+        <img id="callWorkerAvatar" src="" alt="Worker Avatar" class="call-avatar-img">
+      </div>
+
+      <h3 id="callWorkerName" class="call-worker-name">Rajesh Kumar</h3>
+      <p id="callWorkerRole" class="call-worker-role">Senior Cleaning Expert (4.94 ★)</p>
+      
+      <div class="call-status" id="callStatusText">Connecting direct call...</div>
+
+      <div class="call-timer" id="callTimer">00:00</div>
+
+      <!-- In-call action controls -->
+      <div class="call-controls">
+        <button class="call-btn-circle btn-mute" onclick="toggleMute(this)" title="Mute">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+            <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+          </svg>
+        </button>
+
+        <button class="call-btn-circle btn-end-call" onclick="endCall()" title="End Call">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+            <path d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.7.28-.28 0-.53-.11-.71-.29L.29 13.08c-.18-.17-.29-.42-.29-.7 0-.28.11-.53.29-.71C3.34 8.78 7.46 7 12 7s8.66 1.78 11.71 4.67c.18.18.29.43.29.71 0 .28-.11.53-.29.71l-2.48 2.48c-.18.18-.43.29-.71.29-.27 0-.52-.11-.7-.28-.79-.74-1.69-1.36-2.67-1.85-.33-.16-.56-.5-.56-.9v-3.1C15.15 9.25 13.6 9 12 9z"/>
+          </svg>
+        </button>
+
+        <a class="call-btn-circle btn-phone-fallback" id="callTelLink" href="tel:+919876543210" title="Regular Phone Call">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Direct Booking Slot Picker Modal -->
+  <div class="modal-overlay" id="bookWorkerModal">
+    <div class="bottom-sheet booking-sheet">
+      <div class="sheet-handle"></div>
+      
+      <div class="sheet-header">
+        <h3>Confirm Booking with Worker</h3>
+        <button class="close-btn" onclick="closeBookWorkerModal()">✕</button>
+      </div>
+
+      <div class="booking-worker-summary" id="bookingWorkerSummary">
+        <!-- Filled by JS -->
+      </div>
+
+      <div class="slot-picker-section">
+        <label class="slot-label">Select Date & Arrival Time:</label>
+        <div class="slot-chips-grid">
+          <button class="slot-chip active" onclick="selectSlot(this)">⚡ Today (Within 30 mins)</button>
+          <button class="slot-chip" onclick="selectSlot(this)">Today, 4:00 PM</button>
+          <button class="slot-chip" onclick="selectSlot(this)">Today, 6:30 PM</button>
+          <button class="slot-chip" onclick="selectSlot(this)">Tomorrow, 10:00 AM</button>
+          <button class="slot-chip" onclick="selectSlot(this)">Tomorrow, 2:00 PM</button>
+        </div>
+      </div>
+
+      <div class="service-address-box">
+        <div class="addr-icon">📍</div>
+        <div class="addr-text">
+          <strong>Service Address:</strong>
+          <p id="bookingAddress">Kalinganagar, Madhavadhara, Visakhapatnam</p>
+        </div>
+      </div>
+
+      <div class="booking-guarantee-row">
+        <span>🛡️ 100% On-Time Guarantee</span>
+        <span>✓ No advance payment required</span>
+      </div>
+
+      <button class="btn-confirm-worker-book" onclick="confirmWorkerBooking()">
+        Book Worker & Confirm Appointment ➔
+      </button>
+    </div>
+  </div>
+
+  <!-- 4. Booking Success Animation Modal -->
+  <div class="modal-overlay" id="bookingSuccessModal">
+    <div class="success-dialog">
+      <div class="success-check-circle">✓</div>
+      <h3>Worker Booked Successfully!</h3>
+      <p id="successWorkerDetail">Rajesh Kumar is assigned to your service.</p>
+      <div class="arrival-countdown-box">
+        <span>Estimated Arrival:</span>
+        <strong id="successArrivalTime">⚡ In 25 Minutes</strong>
+      </div>
+      <button class="btn-success-done" onclick="closeSuccessModal()">Great, View Status</button>
+    </div>
+  </div>
+
+  <!-- 5. Search Modal -->
+  <div class="modal-overlay" id="searchModal">
+    <div class="modal-content search-modal-content">
+      <div class="search-modal-header">
+        <div class="search-input-box">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#64748B" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="searchInputField" placeholder="Search for services, packages or workers..." autofocus>
+        </div>
+        <button class="close-btn" onclick="closeSearchModal()">✕</button>
+      </div>
+      <div class="search-suggestions-list" id="searchSuggestions">
+        <div class="suggestion-header">Trending searches</div>
+        <div class="chip-list">
+          <span class="search-chip" onclick="searchKeyword('Bathroom Cleaning')">Bathroom Cleaning</span>
+          <span class="search-chip" onclick="searchKeyword('AC Service')">AC Service</span>
+          <span class="search-chip" onclick="searchKeyword('Waxing')">Waxing</span>
+          <span class="search-chip" onclick="searchKeyword('Sofa Cleaning')">Sofa Cleaning</span>
+          <span class="search-chip" onclick="searchKeyword('Pedicure')">Pedicure</span>
+          <span class="search-chip" onclick="searchKeyword('Native Water Purifier')">Native Water Purifier</span>
+        </div>
+        <div class="search-results-container" id="searchResults"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Location Selector Sheet -->
+  <div class="modal-overlay" id="locationModal">
+    <div class="bottom-sheet">
+      <div class="sheet-handle"></div>
+      <div class="sheet-header">
+        <h3>Select your location</h3>
+        <button class="close-btn" onclick="closeLocationModal()">✕</button>
+      </div>
+      <div class="location-search-input">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#64748B" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="locationInput" placeholder="Search area, apartment or landmark...">
+      </div>
+      <div class="location-list">
+        <div class="location-item active" onclick="setLocation('Kalinganagar', 'Madhavadhara- Visakhapatnam- Andhra Pradesh')">
+          <div class="loc-pin">📍</div>
+          <div>
+            <strong>Kalinganagar</strong>
+            <p>Madhavadhara- Visakhapatnam- Andhra Pradesh</p>
+          </div>
+        </div>
+        <div class="location-item" onclick="setLocation('Indiranagar', '100ft Road, Bengaluru, Karnataka')">
+          <div class="loc-pin">📍</div>
+          <div>
+            <strong>Indiranagar</strong>
+            <p>100ft Road, Bengaluru, Karnataka</p>
+          </div>
+        </div>
+        <div class="location-item" onclick="setLocation('Bandra West', 'Hill Road, Mumbai, Maharashtra')">
+          <div class="loc-pin">📍</div>
+          <div>
+            <strong>Bandra West</strong>
+            <p>Hill Road, Mumbai, Maharashtra</p>
+          </div>
+        </div>
+        <div class="location-item" onclick="setLocation('Cyber City', 'DLF Phase 2, Gurugram, Haryana')">
+          <div class="loc-pin">📍</div>
+          <div>
+            <strong>Cyber City</strong>
+            <p>DLF Phase 2, Gurugram, Haryana</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toastNotification">Action completed!</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
