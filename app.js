@@ -1,4 +1,4 @@
-// Urban Company Replica - Core Logic & Gig Worker Booking System
+// Apex Media - Core Logic & Gig Worker Booking System
 
 // Comprehensive Database of Verified Gig Workers mapped by Category & Service
 const gigWorkersDB = {
@@ -637,7 +637,7 @@ function selectNavTab(btn, tabName) {
   btn.classList.add('active');
 
   if (tabName === 'help') {
-    showToast('24x7 UC Support Center is Online');
+    showToast('24x7 Apex Media Support Center is Online');
   } else if (tabName === 'native') {
     openGigWorkersForService('native_purifier', 'Native Smart Purifiers', '₹13,999');
   } else if (tabName === 'account') {

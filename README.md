@@ -1,6 +1,6 @@
-# Urban Company Web Application Replica
+# Apex Media
 
-A mobile-first web replica of the **Urban Company** homepage with interactive service discovery, 3D category cards, verified gig worker matching, in-app direct calling, and instant booking workflows.
+A mobile-first web application for **Apex Media** featuring on-demand services, 3D category cards, verified gig worker matching, in-app direct calling, and instant booking workflows.
 
 ## Features
 
