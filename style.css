@@ -59,18 +59,85 @@ body {
 ============================================================ */
 .gradient-header {
   background: var(--header-gradient);
-  padding: 18px 16px 20px 16px;
+  padding: 14px 16px 18px 16px;
   position: relative;
   z-index: 10;
+}
+
+.brand-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.brand-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.brand-logo-text {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.brand-sub-badge {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.brand-quick-actions {
+  display: flex;
+  align-items: center;
+}
+
+.brand-icon-btn {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.15s ease;
+}
+
+.brand-icon-btn:active {
+  transform: scale(0.95);
+}
+
+.brand-bell-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 7px;
+  height: 7px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  border: 1.5px solid #ffffff;
 }
 
 .location-bar {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   color: #ffffff;
   cursor: pointer;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   user-select: none;
 }
 
